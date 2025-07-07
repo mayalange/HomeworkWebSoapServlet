@@ -1,7 +1,11 @@
 package com.example.service;
 
-import jakarta.xml.bind.annotation.*;
-import lombok.Data;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+
+import java.util.Date;
 
 @XmlRootElement(name = "book", namespace = "http://example.com/service")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -17,6 +21,9 @@ public class BookDTO {
 
     @XmlElement(namespace = "http://example.com/service")
     private String genre;
+
+    @XmlElement(namespace = "http://example.com/service")
+    private Date borrowDate;
 
     public BookDTO() {
     }

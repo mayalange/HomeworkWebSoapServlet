@@ -11,12 +11,11 @@ public interface LibraryService {
     @WebMethod(operationName = "addBook")
     void addBook(@WebParam(name = "book", targetNamespace = "http://example.com/service") BookDTO book);
 
-    @WebMethod
-    void addReader(ReaderDTO reader);
+    @WebMethod(operationName = "addReader")
+    void addReader(@WebParam(name = "reader", targetNamespace = "http://example.com/service") ReaderDTO reader);
 
-    @WebMethod
-    void borrowBook(BorrowDTO borrow);
+    @WebMethod(operationName = "borrowBook")
+    void borrowBook(@WebParam(name = "borrowBook", targetNamespace = "http://example.com/service") BorrowDTO borrow);
 
-    @WebMethod
-    List<BookDTO> getBorrowedBooksByReaderId(int readerId);
-}
+    @WebMethod(operationName = "getBorrowedBooksByReaderId")
+    List<BookDTO> getBorrowedBooksByReaderId(@WebParam(name = "readerId", targetNamespace = "http://example.com/service") int readerId);}
